@@ -1,12 +1,12 @@
 ﻿/*
  * Copyright 2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- *  
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -24,6 +24,7 @@ using System.Windows.Forms;
 using Enyim.Caching;
 using Amazon.ElastiCacheCluster;
 using Enyim.Caching.Memcached;
+using NullLoggerFactory = Microsoft.Extensions.Logging.Abstractions.NullLoggerFactory;
 
 namespace ClusterClientAppTester
 {
@@ -47,11 +48,11 @@ namespace ClusterClientAppTester
             try
             {
                 this.LabelStatus.Text = "Instantiating";
-                
-                // Instantiates config from app.config in the clusterclient section
-                this.config = new ElastiCacheClusterConfig();
 
-                mem = new MemcachedClient(this.config);
+                // Instantiates config from app.config in the clusterclient section
+                this.config = new ElastiCacheClusterConfig(new ClusterConfigSettings("", 11211));
+
+                mem = new MemcachedClient(NullLoggerFactory.Instance, config);
 
                 #region UI Stuff
 
@@ -88,7 +89,7 @@ namespace ClusterClientAppTester
                 // Instantiates client with default settings and uses the hostname and port provided
                 this.config = new ElastiCacheClusterConfig(this.TextOlder.Text, Convert.ToInt32(this.TextPort.Text));
 
-                this.mem = new MemcachedClient(this.config);
+                this.mem = new MemcachedClient(NullLoggerFactory.Instance, this.config);
 
                 #region UI Stuff
 
@@ -195,10 +196,10 @@ namespace ClusterClientAppTester
             if (this.ProgressPoller.Value == 60)
             {
                 this.ProgressPoller.Value = 0;
-                this.ProgressBarStatus.Value = 100;                
-                this.LabelStatus.Text = "Poller cycle completed."; 
+                this.ProgressBarStatus.Value = 100;
+                this.LabelStatus.Text = "Poller cycle completed.";
             }
-            
+
         }
     }
 }

@@ -2,6 +2,11 @@
 
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;net461</TargetFrameworks>
+    <PackageIconUrl>http://media.amazonwebservices.com/aws_singlebox_01.png</PackageIconUrl>
+    <PackageLicenseUrl>http://aws.amazon.com/apache2.0</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/awslabs/elasticache-cluster-config-net</PackageProjectUrl>
+    <Copyright>Copyright 2014</Copyright>
+    <PackageId>Amazon.ElastiCacheClusterCore</PackageId>
   </PropertyGroup>
 
   <ItemGroup>

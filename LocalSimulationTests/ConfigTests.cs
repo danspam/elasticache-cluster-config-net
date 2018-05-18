@@ -32,6 +32,7 @@ namespace LocalSimulationTests
         [TestMethod]
         public void ConfigTest()
         {
+            RequestCounter.Reset();
             // The url below is used to bypass the .cfg. contraint of the hostname for testing locally
             ClusterConfigSettings settings =
                 new ClusterConfigSettings("www.cfg.org", 11211) {NodeFactory = new NodeFactory()};
@@ -44,6 +45,8 @@ namespace LocalSimulationTests
         [TestMethod]
         public void InitialRequestTest()
         {
+            RequestCounter.Reset();
+
             // The url below is used to bypass the .cfg. contraint of the hostname for testing locally
             var settings =
                 new ClusterConfigSettings("www.cfg.org", 11211)
@@ -65,6 +68,8 @@ namespace LocalSimulationTests
         [TestMethod]
         public void PollerTesting()
         {
+            RequestCounter.Reset();
+
             //Poller is set to poll every second to make this test faster
             var settings = new ClusterConfigSettings("www.cfg.org", 11211)
             {

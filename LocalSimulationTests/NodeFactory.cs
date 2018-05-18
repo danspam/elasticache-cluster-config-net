@@ -25,8 +25,7 @@ namespace LocalSimulationTests
     {
         public IMemcachedNode CreateNode(System.Net.IPEndPoint endpoint, Enyim.Caching.Configuration.ISocketPoolConfiguration config)
         {
-            var node = new TestNode();
-            node.End = endpoint;
+            var node = new TestNode {End = endpoint};
             return node;
         }
     }

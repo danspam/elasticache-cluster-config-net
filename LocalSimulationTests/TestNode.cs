@@ -23,11 +23,25 @@ using Enyim.Caching.Memcached.Results;
 
 namespace LocalSimulationTests
 {
+    public class RequestCounter
+    {
+        public static int Count = 1;
+
+        public static void Increment()
+        {
+            Count++;
+        }
+
+        public static void Reset()
+        {
+            Count = 1;
+        }
+    }
+
     public class TestNode : IMemcachedNode
     {
         public IPEndPoint End;
 
-        private static int requestNum = 1;
 
         public IOperationResult Execute(IOperation op)
         {
@@ -35,25 +49,25 @@ namespace LocalSimulationTests
 
             byte[] bytes;
 
-            Debug.WriteLine("request: " + requestNum);
+            Debug.WriteLine("request: " + RequestCounter.Count);
 
-            switch (requestNum)
+            switch (RequestCounter.Count)
             {
                 case 1:
                     bytes = Encoding.UTF8.GetBytes(
-                        $"{requestNum}\r\ncluster.0001.use1.cache.amazon.aws.com|10.10.10.1|11211 cluster.0002.use1.cache.amazon.aws.com|10.10.10.2|11211 cluster.0003.use1.cache.amazon.aws.com|10.10.10.3|11211\r\n");
+                        $"{RequestCounter.Count}\r\ncluster.0001.use1.cache.amazon.aws.com|10.10.10.1|11211 cluster.0002.use1.cache.amazon.aws.com|10.10.10.2|11211 cluster.0003.use1.cache.amazon.aws.com|10.10.10.3|11211\r\n");
                     break;
                 case 2:
                     bytes = Encoding.UTF8.GetBytes(
-                        $"{requestNum}\r\ncluster.0002.use1.cache.amazon.aws.com|10.10.10.2|11211 cluster.0003.use1.cache.amazon.aws.com|10.10.10.3|11211\r\n");
+                        $"{RequestCounter.Count}\r\ncluster.0002.use1.cache.amazon.aws.com|10.10.10.2|11211 cluster.0003.use1.cache.amazon.aws.com|10.10.10.3|11211\r\n");
                     break;
                 default:
                     bytes = Encoding.UTF8.GetBytes(
-                        $"{requestNum}\r\ncluster.0001.use1.cache.amazon.aws.com|10.10.10.1|11211\r\n");
+                        $"{RequestCounter.Count}\r\ncluster.0001.use1.cache.amazon.aws.com|10.10.10.1|11211\r\n");
                     break;
             }
 
-            requestNum++;
+            RequestCounter.Increment();
 
 
             var arr = new ArraySegment<byte>(bytes);

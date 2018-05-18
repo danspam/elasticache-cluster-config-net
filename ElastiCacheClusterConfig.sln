@@ -5,9 +5,9 @@ VisualStudioVersion = 15.0.27703.2000
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClusterClientAppTester", "ClusterClientAppTester\ClusterClientAppTester.csproj", "{085886E5-3D56-4E41-941A-611EDD2A31D4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LocalSimulationTests", "LocalSimulationTests\LocalSimulationTests.csproj", "{4348C13C-0E60-47C2-B86E-8D1FBB4060D5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Amazon.ElastiCacheCluster", "Amazon.ElastiCacheCluster\Amazon.ElastiCacheCluster.csproj", "{DD42BDAD-7E33-4F0C-83C2-CDE5A2EDC119}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Amazon.ElastiCacheCluster", "Amazon.ElastiCacheCluster\Amazon.ElastiCacheCluster.csproj", "{DD42BDAD-7E33-4F0C-83C2-CDE5A2EDC119}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LocalSimulationTests", "LocalSimulationTests\LocalSimulationTests.csproj", "{F2723CFB-79B5-4055-BF75-CC0CFA7495D0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,14 +19,14 @@ Global
 		{085886E5-3D56-4E41-941A-611EDD2A31D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{085886E5-3D56-4E41-941A-611EDD2A31D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{085886E5-3D56-4E41-941A-611EDD2A31D4}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4348C13C-0E60-47C2-B86E-8D1FBB4060D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4348C13C-0E60-47C2-B86E-8D1FBB4060D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4348C13C-0E60-47C2-B86E-8D1FBB4060D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4348C13C-0E60-47C2-B86E-8D1FBB4060D5}.Release|Any CPU.Build.0 = Release|Any CPU
 		{DD42BDAD-7E33-4F0C-83C2-CDE5A2EDC119}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{DD42BDAD-7E33-4F0C-83C2-CDE5A2EDC119}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DD42BDAD-7E33-4F0C-83C2-CDE5A2EDC119}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DD42BDAD-7E33-4F0C-83C2-CDE5A2EDC119}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F2723CFB-79B5-4055-BF75-CC0CFA7495D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2723CFB-79B5-4055-BF75-CC0CFA7495D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F2723CFB-79B5-4055-BF75-CC0CFA7495D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F2723CFB-79B5-4055-BF75-CC0CFA7495D0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
