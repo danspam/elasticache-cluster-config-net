@@ -59,6 +59,9 @@ ipch/
 *.vsp
 *.vspx
 
+# Visual Studio 2015 cache/options directory
+.vs/
+
 # Guidance Automation Toolkit
 *.gpState
 
@@ -95,9 +98,17 @@ publish/
 # Publish Web Output
 *.Publish.xml
 
-# NuGet Packages Directory
-## TODO: If you have NuGet Package Restore enabled, uncomment the next line
-#packages/
+# NuGet Packages
+*.nupkg
+# The packages folder can be ignored because of Package Restore
+**/packages/*
+# except build/, which is used as an MSBuild target.
+!**/packages/build/
+# Uncomment if necessary however generally it will be regenerated when needed
+!**/packages/repositories.config
+# NuGet v3's project.json files produces more ignorable files
+*.nuget.props
+*.nuget.targets
 
 # Windows Azure Build Output
 csx
