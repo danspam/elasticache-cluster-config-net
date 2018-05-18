@@ -6,7 +6,11 @@
     <PackageLicenseUrl>http://aws.amazon.com/apache2.0</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/awslabs/elasticache-cluster-config-net</PackageProjectUrl>
     <Copyright>Copyright 2014</Copyright>
-    <PackageId>Amazon.ElastiCacheClusterCore</PackageId>
+    <PackageId>Amazon.ElastiCacheCluster.Core</PackageId>
+    <Authors>Amazon.com, Inc</Authors>
+    <Product>Amazon.ElastiCacheCluster.Core</Product>
+    <Version>1.0.0</Version>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <ItemGroup>
